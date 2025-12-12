@@ -1,0 +1,12 @@
+services:
+  - type: worker
+    name: bmt-poker-bot
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: HOST_USER_ID
+        sync: false
